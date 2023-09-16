@@ -1,0 +1,13 @@
+services:
+  node:
+    stdin_open: true
+    build:
+      context: ./containers/node
+      dockerfile: ./Dockerfile
+    ports:
+      - target: 5173
+        published: "33000"
+    volumes:
+      - type: bind
+        source: ./src
+        target: /home/app
